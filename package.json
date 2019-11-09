@@ -1,0 +1,11 @@
+{
+  "name": "diff-ranges",
+  "version": "1.0.0",
+  "description": "Give index ranges of difference between two array of objects",
+  "main": "diff-ranges.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "akshatbhargava123",
+  "license": "ISC"
+}
