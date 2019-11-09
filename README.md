@@ -1,6 +1,6 @@
 # diff-ranges
 
-JavaScript function that return index ranges of different objects in an array of objects.
+JavaScript function that return index ranges of new objects in an array of objects and also return newly added objects.
 
 ## How to use?
 
@@ -52,6 +52,25 @@ const b = [
 ### Use it
 
 ```javascript
-const indicesRanges = getDiffIndexRanges(a, b, (ai, bi) => ai.name === bi.name);
+const result = getDiffIndexRanges(a, b, (ai, bi) => ai.name === bi.name);
+const indicesRanges = result.rangeIndices;
 // [{ startRow: 2, endRow: 4 }]
+
+const newElements = result.newElements;
+/*
+    [{
+        name: 'val3',
+        age: 21
+    },
+    {
+        name: 'val4',
+        age: 20
+    }]
+*/
+```
+
+### API
+
+```javascript
+getDiffIndexRanges(oldArray, newArray, comparatorFunction);
 ```

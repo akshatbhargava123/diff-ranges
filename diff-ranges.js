@@ -1,10 +1,13 @@
 module.exports.getDiffIndexRanges = (oldAr, newAr, comparator) => {
-    const newElemIndices = []
+    const newElemIndices = [], newElems = [];
     const pairs = [];
     let lastIndex = -1, startRange = -1, endRange = -1;
 
     newAr.forEach((bi, index) => {
-        if (oldAr.findIndex(ai => comparator(ai, bi)) == -1) newElemIndices.push(index);
+        if (oldAr.findIndex(ai => comparator(ai, bi)) == -1) {
+            newElemIndices.push(index);
+            newElems.push(newAr[index]);
+        }
     });
 
     newElemIndices.forEach(i => {
@@ -22,5 +25,5 @@ module.exports.getDiffIndexRanges = (oldAr, newAr, comparator) => {
     });
 
     pairs.push({ startRow: startRange, endRow: endRange });
-    return pairs;
+    return { rangeIndices: pairs, newElements: newElems };
 }
