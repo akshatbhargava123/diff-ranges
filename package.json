@@ -1,6 +1,6 @@
 {
   "name": "diff-ranges",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Give index ranges of difference between two array of objects",
   "main": "diff-ranges.js",
   "scripts": {
