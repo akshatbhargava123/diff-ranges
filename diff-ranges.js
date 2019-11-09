@@ -1,4 +1,4 @@
-module.exports = function getDiffIndexRanges(oldAr, newAr, comparator) {
+module.exports.getDiffIndexRanges = (oldAr, newAr, comparator) => {
     const newElemIndices = []
     const pairs = [];
     let lastIndex = -1, startRange = -1, endRange = -1;

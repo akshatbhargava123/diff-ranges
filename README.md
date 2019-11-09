@@ -4,8 +4,19 @@ JavaScript function that return index ranges of different objects in an array of
 
 ## How to use?
 
-`
-import getDiffIndexRanges from 'diff-ranges';
+### Import
+
+```javascript
+const { getDiffIndexRanges } = require('./diff-ranges');
+
+// OR
+
+import { getDiffIndexRanges } from './diff-ranges';
+```
+
+### Define your arrays (Example)
+
+```javascript
 const a = [
     {
 		name: 'val1',
@@ -35,9 +46,12 @@ const b = [
         age: 20
     }
 ];
+```
 
-getDiffIndexRanges(a, b, (ai, bi) => ai.name === bi.name);
 
+### Use it
+
+```javascript
+const indicesRanges = getDiffIndexRanges(a, b, (ai, bi) => ai.name === bi.name);
 // [{ startRow: 2, endRow: 4 }]
-
-`
+```
